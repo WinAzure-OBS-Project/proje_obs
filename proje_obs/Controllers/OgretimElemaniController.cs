@@ -33,6 +33,7 @@ namespace proje_obs.Controllers
             if(ogr != null)
             {
                 Session.Add("Id", ogretimElemani.OgretimElemaniId);
+                Session.Add("Ad", ogretimElemani.Ad);
                 Session.Add("Role", "OgretimElemani");
             }
             return RedirectToAction("Index");
