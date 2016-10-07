@@ -32,7 +32,7 @@ namespace proje_obs.Controllers
             if(ogr != null)
             {
                 Session.Add("Id", ogrenci.OgrenciId);
-                Session.Add("Ad", ogrenci.Ad);
+                Session.Add("Ad", ogr.Ad);
                 Session.Add("Role", "Ogrenci");
             }
             return RedirectToAction("Index");
