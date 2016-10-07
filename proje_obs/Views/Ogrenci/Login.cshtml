@@ -11,7 +11,7 @@
     @using (Html.BeginForm())
     {
         <span style="width:50px;display:inline-block;margin-left:10px;font-weight:bold">Id:</span>@Html.TextBoxFor(model => model.OgrenciId)<br />
-        <span style="width:50px;display:inline-block;margin-left:10px;font-weight:bold">Şifre:</span>@Html.TextBoxFor(model => model.Sifre)<br />
+        <span style="width:50px;display:inline-block;margin-left:10px;font-weight:bold">Şifre:</span>@Html.PasswordFor(model => model.Sifre)<br />
         <input style="margin-left:20%;margin-top:25px;font-weight:bold" type="submit" value="Giriş yap" />
     }
 </div>
