@@ -1,0 +1,36 @@
+﻿@model IEnumerable<proje_obs.Models.idari>
+
+@{
+    ViewBag.Title = "Listidari";
+}
+
+<h2>Listidari</h2>
+
+<p>
+    @Html.ActionLink("Yeni Ekle", "Addidari")
+</p>
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Ad</th>
+        <th>Görev</th>
+        <th>Şifre</th>
+        <th>Sil?</th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>@item.idariId</td>
+        <td>@item.Ad</td>
+        <td>@item.Gorev</td>
+        <td>@item.Sifre</td>
+        <td>
+            <form action="/TestMode/idariSil">
+                <input type="hidden" name="idariId" value="@item.idariId" />
+                <input type="submit" value="Sil" />
+            </form>
+        </td>
+    </tr>
+}
+
+</table>

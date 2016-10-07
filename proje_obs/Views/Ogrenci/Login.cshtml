@@ -1,0 +1,17 @@
+﻿@using proje_obs.Models
+@model Ogrenci
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+<div style="width:450px;height:350px;background-color:#88b19d;margin-left:30%;">
+    <p style="background-color:aquamarine">Öğrenci Girişi</p>
+    @using (Html.BeginForm())
+    {
+        <span style="width:50px;display:inline-block">Id:</span>@Html.TextBoxFor(model => model.OgrenciId)<br />
+        <span style="width:50px;display:inline-block">Şifre:</span>@Html.TextBoxFor(model => model.Sifre)<br />
+        <input style="margin-left:20%;margin-top:25px" type="submit" value="Giriş yap" />
+    }
+</div>

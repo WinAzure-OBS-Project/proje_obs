@@ -1,0 +1,15 @@
+﻿@using proje_obs.Models
+@model OgretimElemani
+
+@{
+    ViewBag.Title = "AddOgretimElemani";
+}
+
+<h2>AddOgretimElemani</h2>
+
+@using (Html.BeginForm())
+{
+    <span>Ad:</span>@Html.TextBoxFor(model => model.Ad)<br />
+    <span>Şifre:</span>@Html.TextBoxFor(model => model.Sifre)<br />
+    <input type="submit" />
+}

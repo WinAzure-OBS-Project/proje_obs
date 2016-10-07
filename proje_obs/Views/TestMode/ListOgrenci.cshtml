@@ -1,0 +1,37 @@
+﻿@using proje_obs.Models
+@model List<Ogrenci>
+
+@{
+    ViewBag.Title = "ListOgrenci";
+}
+
+<h2>ListOgrenci</h2>
+
+<table>
+    <tr>
+        <th>Ogrenci ID</th>
+        <th>Ogrenci Adı</th>
+        <th>Şifre</th>
+        <th>Bölüm</th>
+        <th>Sil?</th>
+    </tr>
+    @foreach (Ogrenci o in Model)
+    {
+        var b = (o.bolum != null) ? o.bolum.BolumAdi : "Bilinmiyor";
+        <tr>
+            <td>@o.OgrenciId</td>
+            <td>@o.Ad</td>
+            <td>@o.Sifre</td>
+            <td>@b</td>
+            <td>
+                <form method="post" action="/Godmode/OgrenciSil">
+                    <input type="hidden" name="OgrenciId" value="@o.OgrenciId" />
+                    <input type="submit" value="Sil" />
+                </form>
+            </td>
+        </tr>
+    }
+</table>
+
+<br />
+@Html.ActionLink("Yeni ekle", "AddOgrenci")

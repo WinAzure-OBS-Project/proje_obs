@@ -1,0 +1,16 @@
+﻿@using proje_obs.Models
+@model idari
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<div style="width:450px;height:350px;background-color:#88b19d;margin-left:30%;">
+    <p style="background-color:aquamarine">İdari Personel Girişi</p>
+    @using (Html.BeginForm())
+    {
+        <span style="width:50px;display:inline-block">Id:</span>@Html.TextBoxFor(model => model.idariId)<br />
+        <span style="width:50px;display:inline-block">Şifre:</span>@Html.TextBoxFor(model => model.Sifre)<br />
+        <input style="margin-left:20%;margin-top:25px" type="submit" value="Giriş yap" />
+    }
+</div>

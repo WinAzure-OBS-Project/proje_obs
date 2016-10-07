@@ -1,0 +1,33 @@
+﻿@using proje_obs.Models
+@model List<OgretimElemani>
+@{
+    ViewBag.Title = "ListOgretimElemani";
+}
+
+<h2>ListOgretimElemani</h2>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Adı</th>
+        <th>Şifresi</th>
+        <th>Sil?</th>
+    </tr>
+    @foreach (OgretimElemani o in Model)
+    {
+            <tr>
+                <td>@o.OgretimElemaniId</td>
+                <td>@o.Ad</td>
+                <td>@o.Sifre</td>
+                <td>
+                    <form method="post" action="/Godmode/OgretimElemaniSil">
+                        <input type="hidden" name="OgrenciId" value="@o.OgretimElemaniId" />
+                        <input type="submit" value="Sil" />
+                    </form>
+                </td>
+            </tr>
+            }
+</table>
+
+<br />
+@Html.ActionLink("Yeni ekle", "AddOgretimElemani")
